@@ -4,6 +4,7 @@ import { v4 } from 'uuid';
 import { AppService } from './app.service';
 import { TryCatch, ERROR } from './types';
 import { GuestSigninResBody } from './dto';
+import { GERROR } from 'types';
 
 @Controller()
 export class AppController {
@@ -14,12 +15,24 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @TypedRoute.Get('/signin')
-  async guestSignIn(
+  // @TypedRoute.Get('/local')
+  // async useImportTypes(
+  //   @Res({ passthrough: true }) res: PublicResponse,
+  // ): Promise<TryCatch<
+  //     GuestSigninResBody,
+  //     | typeof ERROR.UNAUTHORIZED
+  // >> {
+  //   const userId = v4();
+
+  //   return createHttpResponse<GuestSigninResBody>({ userId });
+  // }
+
+  @TypedRoute.Get('/global')
+  async useGlobalTypes(
     @Res({ passthrough: true }) res: PublicResponse,
-  ): Promise<TryCatch<
+  ): Promise<GTryCatch<
       GuestSigninResBody,
-      | typeof ERROR.UNAUTHORIZED
+      | typeof GERROR.UNAUTHORIZED
   >> {
     const userId = v4();
 
