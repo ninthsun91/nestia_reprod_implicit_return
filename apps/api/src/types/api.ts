@@ -1,5 +1,5 @@
-type KeyOfError = keyof typeof ERROR_RESPONSE;
-type ValueOfError = (typeof ERROR_RESPONSE)[KeyOfError];
+export type KeyOfError = keyof typeof ERROR_RESPONSE;
+export type ValueOfError = (typeof ERROR_RESPONSE)[KeyOfError];
 export type Try<T> = ResponseForm<T>;
 export type TryCatch<T, E extends ValueOfError> = ResponseForm<T> | E;
 
