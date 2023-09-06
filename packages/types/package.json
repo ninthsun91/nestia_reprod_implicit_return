@@ -1,0 +1,24 @@
+{
+  "name": "types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "types": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "18.15.11",
+    "mongoose": "^7.1.0",
+    "tsconfig": "workspace:*",
+    "typescript": "^5.1.6"
+  },
+  "peerDependencies": {
+    "mongoose": "^7.1.0"
+  }
+}
